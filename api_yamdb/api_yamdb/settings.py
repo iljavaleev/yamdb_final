@@ -146,9 +146,3 @@ SIMPLE_JWT = {
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 DEFAULT_FROM_EMAIL = 'from@example.com'
-
-import sys
-
-if 'test' in sys.argv or 'test\_coverage' in sys.argv:
- DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
- DATABASES['default']['NAME'] = ':memory:'
