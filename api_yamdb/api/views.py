@@ -1,42 +1,28 @@
-from django.conf import settings as st
-from django.core.mail import send_mail
-from django.shortcuts import get_object_or_404
-from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
-from rest_framework_simplejwt.tokens import AccessToken
-from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework.pagination import LimitOffsetPagination
-from django.db.models import Avg
-from django.contrib.auth import get_user_model
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import (
-    viewsets,
-    status,
-    filters,
-    mixins
-)
-
 import uuid
 
-from reviews.models import Review, Comment, Genre, Title, Category
-from .serializers import (
-    ReviewSerializer,
-    CommentSerializer,
-    SignupUserSerializer,
-    CategorySerializer,
-    GenreSerializer,
-    TitleSerializer,
-    UserSerializer,
-    UserMeSerializer,
-    TokenUserSerializer
-)
-from .permissions import (
-    IsAdminPermission,
-    IsAuthenticatedPermission,
-    IsAdminOrReadOnlyPermission,
-    IsAuthorModeratorAdminPermission,
-)
+from django.conf import settings as st
+from django.contrib.auth import get_user_model
+from django.core.mail import send_mail
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, mixins, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Comment, Genre, Review, Title
+
 from .filters import TitleFilter
+from .permissions import (IsAdminOrReadOnlyPermission, IsAdminPermission,
+                          IsAuthenticatedPermission,
+                          IsAuthorModeratorAdminPermission)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          SignupUserSerializer, TitleSerializer,
+                          TokenUserSerializer, UserMeSerializer,
+                          UserSerializer)
 
 User = get_user_model()
 
