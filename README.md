@@ -2,14 +2,11 @@
 
 #### Проект: CI и CD проекта api_yamdb | Программа python-разработчики | Спринт 16
 
-![yamdb workflow](https://github.com/iljavaleev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
 ---
 
 ### Авторы проекта
 
 [Илья Валеев](https://github.com/iljavaleev/) | [Александр Лахтюк](https://github.com/aslakhtyuk/) | [Дмитрий Кирсанов](https://github.com/vepsong/)
-
 
 ---
 ## О проекте YaMDb
@@ -48,52 +45,5 @@
 * rewies — работа с отзывами.
 * comments — работа с комментариями.
 
-Подробный список всех endpoint'ов и примеры ответов в [техническом задании](#Техническое-задание)
 
-## Техническое задание
-
-Техническое задание доступно по адресу: 
-http://localhost/redoc
-
-p.s. ссылка активна только при запущенном тестовом сервере.
-
-## Инструкция по запуску проекта на локальной машине
-
-Все операции выполняются в командной строке.
-
-
-* Клонировать репозиторий:
-```
-git clone <ссылка>
-```
-
-В дериктории infra/ cоздать файл .env, в котором указать переменные окружения для работы с базой данных:
-```
-cp .env.example .env
-```
-
-* Из дериктории infra/ запустить docker-compose командой:
-```
-docker-compose up -d --build
-```
-
-* Выполнить миграции:
-```
-docker-compose exec web python manage.py migrate
-```
-
-* Создать суперпользователя:
-```
-docker-compose exec web python manage.py createsuperuser
-```
-
-* При необходимости загрузить тестовую информацию из fixtures.json
-```
-docker-compose exec web python manage.py loaddata fixtures.json
-```
-
-* Приложение доступно по адресу http://localhost
-
-## Авторы проекта
-
-[Илья Валеев](https://github.com/iljavaleev/) | [Александр Лахтюк](https://github.com/aslakhtyuk/) | [Дмитрий Кирсанов](https://github.com/vepsong/)
+![yamdb workflow](https://github.com/iljavaleev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
