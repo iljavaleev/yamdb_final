@@ -58,6 +58,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/infra:v1.0
             sudo docker-compose down
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
