@@ -4,7 +4,7 @@ from reviews.models import Category
 
 
 def run():
-    fhand = open('redoc/data/category.csv')
+    fhand = open('static/data/category.csv')
     reader = csv.reader(fhand)
     next(reader)
 
