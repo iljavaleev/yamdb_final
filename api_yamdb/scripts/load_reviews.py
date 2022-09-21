@@ -8,7 +8,7 @@ User = get_user_model()
 
 
 def run():
-    fhand = open('static/data/review.csv')
+    fhand = open('redoc/data/review.csv')
     reader = csv.reader(fhand)
     next(reader)
 

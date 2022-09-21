@@ -70,7 +70,6 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             sudo docker-compose up -d --build
             sudo docker-compose exec iljavaleev_web_1 python manage.py collectstatic
-            sudo docker-compose exec iljavaleev_web_1 python manage.py loaddata fixtures.json
             sudo systemctl restart gunicorn
 
 

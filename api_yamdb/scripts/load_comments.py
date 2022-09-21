@@ -9,7 +9,7 @@ User = get_user_model()
 
 
 def run():
-    fhand = open('static/data/comments.csv')
+    fhand = open('redoc/data/comments.csv')
     reader = csv.reader(fhand)
     next(reader)
 
