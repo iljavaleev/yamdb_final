@@ -47,3 +47,5 @@
 
 
 ![yamdb workflow](https://github.com/iljavaleev/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
+Сервис доступен по адресу [http://foryatube.hopto.org/](http://foryatube.hopto.org/)
