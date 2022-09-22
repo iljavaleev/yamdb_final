@@ -7,9 +7,9 @@ from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(
-        'static/',
-        TemplateView.as_view(template_name='static.html'),
-        name='static'
+        'redoc/',
+        TemplateView.as_view(template_name='redoc.html'),
+        name='redoc'
     ),
     path('api/', include('api.urls')),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
